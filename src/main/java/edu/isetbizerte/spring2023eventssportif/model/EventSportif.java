@@ -4,12 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-
-import java.io.Serializable;
-import java.time.Instant;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -25,5 +21,14 @@ public class EventSportif extends AbstractEntity {
     private String logoURL;
 
     private String posterURL;
+
+    @Embedded
+    private Adresse lieu;
+
+    @OneToMany(mappedBy = "eventSportif")
+    private List<Categorie> categories;
+
+    @OneToMany(mappedBy = "eventSportif")
+    private List<Equipe> equipes;
 
 }

@@ -14,5 +14,9 @@ import lombok.NoArgsConstructor;
 public class Scoring extends AbstractEntity{
     private Integer scoreRouge;
     private Integer scoreBleu;
+
+    private Integer penaliteRouge;
+    private Integer penaliteBleu;
+
     private Athlete gagnant;
 }
