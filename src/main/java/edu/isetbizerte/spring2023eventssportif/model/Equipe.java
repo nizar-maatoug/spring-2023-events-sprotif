@@ -2,6 +2,7 @@ package edu.isetbizerte.spring2023eventssportif.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,11 +20,16 @@ public class Equipe extends  AbstractEntity{
     private String logoURL;
     @Embedded
     private Adresse lieu;
+
+    private String email;
     @ManyToOne
     @JoinColumn(name="idEvent")
     private EventSportif eventSportif;
 
     @OneToMany(mappedBy = "equipe")
     private List<Athlete> athletes;
+
+
+
 
 }

@@ -2,6 +2,7 @@ package edu.isetbizerte.spring2023eventssportif.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.Date;
@@ -17,6 +18,8 @@ public class EventSportif extends AbstractEntity {
     private String nom;
 
     private Date dateDebut;
+
+    private Date dateFin;
 
     private String logoURL;
 
